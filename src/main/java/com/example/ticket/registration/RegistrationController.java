@@ -1,6 +1,7 @@
 package com.example.ticket.registration;
 
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 import java.util.NoSuchElementException;
 
@@ -14,7 +15,7 @@ public class RegistrationController {
     }
 
     @PostMapping
-    public Registration create(@RequestBody  Registration registration) {
+    public Registration create(@RequestBody @Valid  Registration registration) {
         return registrationRepository.create(registration);
     }
 
